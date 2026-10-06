@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "products"
+    label: "Products"
+    folder: "products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Product Code (SKU)", name: "sku", widget: "string"}
+      - {label: "Product Name", name: "title", widget: "string"}
+      - {label: "Main Category", name: "category", widget: "select", options: ["Bags", "Footwear", "Exclusive Clutches", "Trendy Backpacks", "Others"]}
+      - {label: "Price (BDT)", name: "price", widget: "number"}
+      - {label: "Stock Qty", name: "stock", widget: "number", default: 10}
+      - {label: "Product Description", name: "body", widget: "markdown"}
+      - {label: "Product Image", name: "image", widget: "image"}
